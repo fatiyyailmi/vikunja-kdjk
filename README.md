@@ -1,3 +1,5 @@
+<h1 align="center"><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fcoolify.io%2Fdocs%2Fservices%2Fvikunja&psig=AOvVaw0JgV5TIPddNZzO0RcSZ4Qu&ust=1759463813360000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPCn2M_PhJADFQAAAAAdAAAAABAW"></h1>
+
 # Vikunja
 
 
