@@ -65,4 +65,4 @@ Skrip shell untuk otomatisasi instalasi, konfigurasi, dan maintenance.
 ## Referensi
 [`^ kembali ke atas ^`](#)
 
-- vikunja.io 
+- https://vikunja.io/
