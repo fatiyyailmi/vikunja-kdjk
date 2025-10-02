@@ -12,9 +12,12 @@ Vikunja adalah aplikasi to-do open-source yang bisa di-self-host, yang dirancang
 ## Instalasi
 [`^ kembali ke atas ^`](#)
 
-- Prasyarat, apa saja yang harus diinstal sebelumnya.
-- Langkah instalasi dalam CLI.
-
+Sebelum instalasi, pastikan sudah menginstal:
+- **Linux server** (misalnya Ubuntu 22.04 LTS)
+- **Docker** & **Docker Compose**
+- **Git**
+- **Nginx / Apache** (opsional untuk reverse proxy)
+- **Domain / localhost** untuk akses aplikasi
 
 ## Konfigurasi (opsional)
 [`^ kembali ke atas ^`](#)
