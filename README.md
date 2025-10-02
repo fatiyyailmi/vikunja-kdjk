@@ -1,20 +1,23 @@
 <h1 align="center"><img src="https://vikunja.cloud/images/vikunja-logo.svg"></h1>
 
-# Vikunja
-
+[Sekilas Tentang](#sekilas-tentang) | [Instalasi](#instalasi) | [Konfigurasi](#konfigurasi) | [Otomatisasi](#otomatisasi) | [Cara Pemakaian](#cara-pemakaian) | [Pembahasan](#pembahasan) | [Referensi](#referensi)
+:---:|:---:|:---:|:---:|:---:|:---:|:---:
 
 ## Sekilas Tentang
+[`^ kembali ke atas ^`](#)
 
-Deskripsi singkat tentang aplikasi tsb.
+Vikunja adalah aplikasi to-do yang dirancang untuk membantu individu maupun tim dalam mengelola tugas dan proyek secara fleksibel juga kolaboratif. Aplikasi ini menawarkan berbagai tampilan yang memudahkan pengaturan pekerjaan, sekaligus menjaga privasi dan kendali penuh atas data pengguna.
 
 
 ## Instalasi
+[`^ kembali ke atas ^`](#)
 
 - Prasyarat, apa saja yang harus diinstal sebelumnya.
 - Langkah instalasi dalam CLI.
 
 
 ## Konfigurasi (opsional)
+[`^ kembali ke atas ^`](#)
 
 Setting server tambahan yang diperlukan untuk meningkatkan fungsi dan kinerja aplikasi, misalnya:
 - batas upload file
@@ -28,6 +31,7 @@ Plugin untuk fungsi tambahan
 
 
 ##  Maintenance (opsional)
+[`^ kembali ke atas ^`](#)
 
 Setting tambahan untuk maintenance secara periodik, misalnya:
 - buat backup database tiap pekan
@@ -36,11 +40,13 @@ Setting tambahan untuk maintenance secara periodik, misalnya:
 
 
 ## Otomatisasi (opsional)
+[`^ kembali ke atas ^`](#)
 
 Skrip shell untuk otomatisasi instalasi, konfigurasi, dan maintenance.
 
 
 ## Cara Pemakaian
+[`^ kembali ke atas ^`](#)
 
 - Tampilan aplikasi web
 - Fungsi-fungsi utama
@@ -48,6 +54,7 @@ Skrip shell untuk otomatisasi instalasi, konfigurasi, dan maintenance.
 
 
 ## Pembahasan
+[`^ kembali ke atas ^`](#)
 
 - Pendapat anda tentang aplikasi web ini
     - kelebihan
@@ -56,5 +63,6 @@ Skrip shell untuk otomatisasi instalasi, konfigurasi, dan maintenance.
 
 
 ## Referensi
+[`^ kembali ke atas ^`](#)
 
 Cantumkan tiap sumber informasi yang anda pakai.
