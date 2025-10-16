@@ -65,7 +65,20 @@ Skrip shell untuk otomatisasi instalasi, konfigurasi, dan maintenance.
 
 - Pendapat anda tentang aplikasi web ini
     - kelebihan
-    - kekurangan
+- kekurangan
+  - Kekurangan Dari Segi Fitur
+    1. Belum ada fitur real-time update, seperti dua orang edit list/ tugas secara bersamaan
+       - Solusi: refresh project team secara berkala agar ter-update dengan baik
+    2. Tampilan tanggal di bagian Gantt horizontal (kurang enak dipandang)
+       <img width="921" height="327" alt="image" src="https://github.com/user-attachments/assets/ba330f9e-de63-43cf-aca9-4fe2dda76afd" />
+       - Solusi: buat seperti bentuk kalender biasa (ada row dan column) 
+    3. Belum adanya sinkronisasi langsung dengan Google Calendar
+       - Solusi: Cek berkala task melalui aplikasi
+    4. Belum dapat invite teman otomatis melalui Email
+       <img width="995" height="321" alt="image" src="https://github.com/user-attachments/assets/91fb13ee-d40f-4e2e-8606-5c9b93a5a1ed" />
+       - Solusi: invite team members langsung melalui aplikasinya
+    5. Belum adanya fitur persentase progress untuk tiap task
+       - Solusi: melihat/ menganalisis persentase progress secara manual
 - Bandingkan dengan aplikasi web lain yang sejenis
 
 
