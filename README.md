@@ -12,44 +12,323 @@ Vikunja memiliki dua komponen utama:
 - **Frontend (Web UI)** — antarmuka berbasis browser untuk mengelola tugas.
 - **Backend (API Server)** — menyimpan data dan menangani proses aplikasi.
 
-
 ## Instalasi
 [`^ kembali ke atas ^`](#)
 
-Sebelum instalasi, pastikan sudah menginstal:
-- **Linux server** (misalnya Ubuntu 22.04 LTS)
-- **Docker** & **Docker Compose**
-- **Git**
-- **Domain / localhost** untuk akses aplikasi
-- **AWS EC2 Instance untuk hosting online**
+# Tutorial Instalasi Vikunja di AWS
 
-#### Spesifikasi Minimum
-- RAM: 1 GB
-- Storage: 10 GB
-- Internet: Koneksi stabil untuk update & akses web
-- Port: 3456 (default Vikunja)
+Panduan instalasi Vikunja di VM AWS menggunakan Docker Compose.
 
-## Instalasi di Server
-[`^ kembali ke atas ^`](#)
+## Requirements
+
+### Hardware & VM
+- VM AWS EC2 (minimal t2.small)
+- RAM: Minimal 2GB
+- Storage: Minimal 20GB
+- OS: Ubuntu 20.04/22.04 LTS
+- IP Publik yang sudah di-assign
+- Security Group dengan port terbuka:
+  - Port 22 (SSH)
+  - Port 80 (HTTP)
+  - Port 443 (HTTPS)
+
+### Software
+- Docker Engine (versi 20.10+)
+- Docker Compose (versi 2.0+)
+
+### Akun & Kredensial
+- AWS Key Pair (.pem file)
+- DuckDNS Account dan Token
+- Email SMTP (Gmail App Password)
+
+## Tahapan Instalasi
+
+### 1. Koneksi ke VM AWS
+
+#### Set permission untuk SSH key
+
+**Linux/Mac:**
 ```bash
-sudo apt update && sudo apt upgrade -y
-sudo apt install docker.io docker-compose git -y
-sudo systemctl enable --now docker
+chmod 400 /path/to/your-key.pem
 ```
 
-##  Maintenance (opsional)
-[`^ kembali ke atas ^`](#)
+**Windows (WSL):**
+```bash
+chmod 400 your-key.pem
+```
 
-Setting tambahan untuk maintenance secara periodik, misalnya:
-- buat backup database tiap pekan
-- hapus direktori sampah tiap hari
-- dll
+#### SSH ke EC2
 
+**Untuk Ubuntu:**
+```bash
+ssh -i "your-key.pem" ubuntu@your-ec2-public-ip
+```
 
-## Otomatisasi (opsional)
-[`^ kembali ke atas ^`](#)
+**Untuk Amazon Linux:**
+```bash
+ssh -i "your-key.pem" ec2-user@your-ec2-public-ip
+```
 
-Skrip shell untuk otomatisasi instalasi, konfigurasi, dan maintenance.
+Contoh:
+```bash
+ssh -i "vikunja-key.pem" ubuntu@54.123.45.67
+```
+
+### 2. Update Sistem
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+### 3. Install Docker Engine
+
+```bash
+# Hapus instalasi Docker lama
+sudo apt remove docker docker-engine docker.io containerd runc
+
+# Install dependencies
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+
+# Tambahkan Docker GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+# Tambahkan Docker repository
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# Install Docker
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io
+
+# Verifikasi instalasi
+docker --version
+```
+
+### 4. Install Docker Compose
+
+```bash
+# Download Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# Beri permission execute
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Verifikasi instalasi
+docker-compose --version
+```
+
+### 5. Setup Docker Permission
+
+```bash
+# Tambahkan user ke grup docker
+sudo usermod -aG docker $USER
+
+# Aktifkan perubahan
+newgrp docker
+
+# Test tanpa sudo
+docker ps
+```
+
+### 6. Enable Docker Service
+
+```bash
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo systemctl status docker
+```
+
+### 7. Buat Direktori Project
+
+```bash
+# Buat direktori project
+mkdir -p ~/vikunja
+cd ~/vikunja
+
+# Buat subdirectory
+mkdir -p files duckdns
+```
+
+### 8. Buat File docker-compose.yml
+
+```bash
+nano docker-compose.yml
+```
+
+Copy paste konfigurasi berikut:
+
+```yaml
+version: "3.7"
+
+services:
+
+  vikunja:
+    image: vikunja/vikunja:latest
+    container_name: vikunja
+    restart: unless-stopped
+    environment:
+      VIKUNJA_DATABASE_HOST: db
+      VIKUNJA_DATABASE_PASSWORD: rahasia_db               # GANTI
+      VIKUNJA_DATABASE_TYPE: mysql
+      VIKUNJA_DATABASE_USER: vikunja
+      VIKUNJA_DATABASE_DATABASE: vikunja
+      VIKUNJA_SERVICE_JWTSECRET: gantidengankunciacakpanjang # GANTI
+      VIKUNJA_SERVICE_PUBLICURL: https://vikunja.contoh.com # GANTI
+      VIKUNJA_MAILER_ENABLED: "true"
+      VIKUNJA_MAILER_HOST: smtp.gmail.com
+      VIKUNJA_MAILER_PORT: 587
+      VIKUNJA_MAILER_USERNAME: emailanda@gmail.com          # GANTI
+      VIKUNJA_MAILER_PASSWORD: apppassword_email            # GANTI
+      VIKUNJA_MAILER_FROMEMAIL: emailanda@gmail.com         # GANTI
+    volumes:
+      - ./files:/app/vikunja/files
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - vikunja_net
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.vikunja-secure.rule=Host(`vikunjaanda.duckdns.org`)" # GANTI
+      - "traefik.http.routers.vikunja-secure.entrypoints=websecure"
+      - "traefik.http.routers.vikunja-secure.tls=true"
+      - "traefik.http.routers.vikunja-secure.tls.certResolver=myresolver"
+      - "traefik.http.services.vikunja-secure.loadbalancer.server.port=3456"
+
+  db:
+    image: mariadb:10
+    container_name: vikunja_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rahasia_db_root                    # GANTI
+      MYSQL_DATABASE: vikunja
+      MYSQL_USER: vikunja
+      MYSQL_PASSWORD: rahasia_db                             # GANTI (sama dengan VIKUNJA_DATABASE_PASSWORD)
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mariadb", "-u$$MYSQL_USER", "-p$$MYSQL_PASSWORD", "-e", "SELECT 1" ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - vikunja_net
+
+  traefik:
+    image: traefik:v2.10
+    container_name: traefik
+    restart: unless-stopped
+    command:
+      - "--api.insecure=false"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedByDefault=false"
+      - "--providers.docker.network=vikunja_net"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+      - "--certificatesresolvers.myresolver.acme.httpchallenge=true"
+      - "--certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web"
+      - "--certificatesresolvers.myresolver.acme.email=emailanda@gmail.com" # GANTI
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+      - "--log.level=INFO"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "letsencrypt:/letsencrypt"
+    networks:
+      - vikunja_net
+
+  duckdns:
+    image: linuxserver/duckdns
+    container_name: duckdns
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Jakarta
+      - SUBDOMAINS=vikunjaanda              # GANTI (tanpa .duckdns.org)
+      - TOKEN=token-duckdns-anda           # GANTI
+      - LOG_FILE=true
+    volumes:
+      - ./duckdns:/config
+    restart: unless-stopped
+    networks:
+      - vikunja_net
+
+volumes:
+  db_data:
+  letsencrypt:
+
+networks:
+  vikunja_net:
+    driver: bridge
+```
+
+Simpan file: `Ctrl + X`, lalu `Y`, lalu `Enter`
+
+### 9. Generate JWT Secret
+
+```bash
+openssl rand -base64 64
+```
+
+Copy hasilnya dan ganti di `VIKUNJA_SERVICE_JWTSECRET`
+
+### 10. Konfigurasi Yang Harus Diganti
+
+- `VIKUNJA_DATABASE_PASSWORD`
+- `MYSQL_ROOT_PASSWORD`
+- `MYSQL_PASSWORD` (harus sama dengan VIKUNJA_DATABASE_PASSWORD)
+- `VIKUNJA_SERVICE_JWTSECRET`
+- `VIKUNJA_SERVICE_PUBLICURL`
+- `VIKUNJA_MAILER_USERNAME`
+- `VIKUNJA_MAILER_PASSWORD`
+- `VIKUNJA_MAILER_FROMEMAIL`
+- `traefik.http.routers.vikunja-secure.rule=Host(...)`
+- `certificatesresolvers.myresolver.acme.email`
+- `SUBDOMAINS` di DuckDNS
+- `TOKEN` DuckDNS
+
+### 11. Validasi Konfigurasi
+
+```bash
+docker-compose config
+```
+
+### 12. Pull Docker Images
+
+```bash
+docker-compose pull
+```
+
+### 13. Start Services
+
+```bash
+docker-compose up -d
+```
+
+### 14. Cek Status Container
+
+```bash
+docker-compose ps
+```
+
+### 15. Monitor Logs (Opsional)
+
+```bash
+# Lihat semua logs
+docker-compose logs -f
+
+# Lihat logs spesifik
+docker-compose logs -f vikunja
+```
+
+Tekan `Ctrl + C` untuk keluar.
+
+### 16. Akses Vikunja
+
+Buka browser dan akses: `https://vikunjakdjk.duckdns.org`
 
 
 ## Cara Pemakaian
