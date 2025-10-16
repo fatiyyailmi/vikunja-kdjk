@@ -98,6 +98,19 @@ Ketika suatu projek di klik, user bisa melihat task-task dalam projek tersebut d
 <img width="2853" height="871" alt="image" src="https://github.com/user-attachments/assets/93d1ee8b-b5d1-40d5-ad25-fb20d7f00bc1" />
 <img width="2879" height="1502" alt="image" src="https://github.com/user-attachments/assets/5a7a5fb9-bbb3-4dd4-8a2a-e989d85dbd1b" />
 
+9. Jika mengklik bagian **Profile**, terdapat bagian **Settings** dengan beberapa menu lain didalamnya.
+<img width="2849" height="1526" alt="image" src="https://github.com/user-attachments/assets/70d7a5cd-4157-4d6c-9f8f-508c1db31bea" />
+Di sini terdapat fitur penting, yaitu:
+
+**Export your Vikunja Data**, merupakan fitur untuk mengunduh salinan semua data Vikunja, termasuk projek, task, dan semua yang terkait dengannya.
+<img width="2857" height="1031" alt="Screenshot 2025-10-17 012456" src="https://github.com/user-attachments/assets/afc8acda-3c85-457c-841f-3e1ca8bae394" />
+
+**Import form other devices**, merupakan fitur untuk mengimpor data dari sebuah file dari 
+<img width="2879" height="1031" alt="image" src="https://github.com/user-attachments/assets/ccbc4ae1-e852-49df-8c11-d6cc65e3b074" />
+
+
+
+
 
 ## Pembahasan
 [`^ kembali ke atas ^`](#)
