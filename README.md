@@ -67,13 +67,13 @@ Cara pemakaian Vikunja cukup mudah, dengan interface yang cukup praktis dan muda
 
 4. Ketika task tersebut diklik, akan muncul tampilan untuk menambahkan detail dari task tersebut. Pada bagian kanan, terdapat fitur-fitur yang dapat dipilih untuk mengorganisir task yang telah dibuat, seperti warna, label, prioritas, progress, tanggal mulai dan selesai.
 <img width="2879" height="1523" alt="image" src="https://github.com/user-attachments/assets/27a3f02e-23ce-48e4-b538-9fe33ae79337" />
-Berikut adalah contoh task yang telah ditambahkan beberapa detail: *due date, progress, start date, end date, reminder, color*
+Berikut adalah contoh task yang telah ditambahkan beberapa detail: due date, progress, start date, end date, reminder, color.
 <img width="1507" height="970" alt="image" src="https://github.com/user-attachments/assets/bb788ffb-db3e-4af4-b280-42b3d3788af2" />
 
 
 6. Menu **Upcoming** akan menampilkan tasks terdekat sesuai *due date* yang telah ditentukan. Informasi-informasi mengenai kategori, label, dan progres yang telah ditambahkan sebelumnya juga akan terlihat disini. Ketika suatu task sudah selesai dikerjakan, user bisa menandainya dengan cara mencentang kotak checkbox yang terdapat pada sebelah kiri task.
 <img width="2879" height="1231" alt="image" src="https://github.com/user-attachments/assets/1ae965ec-24d2-458a-b121-c386d5021668" />
-Task yang telah dibuat juga dapat ditampilkan berdasarkan rentang waktu tertentu, dengan mengklik tombol *select a date range*.
+Task yang telah dibuat juga dapat ditampilkan berdasarkan rentang waktu tertentu, dengan mengklik tombol select a date range.
 <img width="1951" height="863" alt="image" src="https://github.com/user-attachments/assets/e95e6235-b8ae-4fb9-a5ca-8481edd8a84d" />
 
 
