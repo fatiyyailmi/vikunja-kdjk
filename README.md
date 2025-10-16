@@ -96,7 +96,7 @@ Ketika suatu projek di klik, user bisa melihat task-task dalam projek tersebut d
 
 9. Menu **Teams** digunakan ketika user ingin berkolaborasi dengan user lainnya dalam sebuah tim. User bisa langsung menembahkan anggota tim dengan mengetikkan username user lain.
 <img width="2853" height="871" alt="image" src="https://github.com/user-attachments/assets/93d1ee8b-b5d1-40d5-ad25-fb20d7f00bc1" />
-<img width="2879" height="1502" alt="image" src="https://github.com/user-attachments/assets/5a7a5fb9-bbb3-4dd4-8a2a-e989d85dbd1b" />
+<img width="2849" height="1517" alt="image" src="https://github.com/user-attachments/assets/6f8d760f-4de1-4830-bbe1-7e24b472632e" />
 
 10. Jika mengklik bagian **Profile**, terdapat bagian **Settings** dengan beberapa menu lain didalamnya.
 <img width="2849" height="1526" alt="image" src="https://github.com/user-attachments/assets/70d7a5cd-4157-4d6c-9f8f-508c1db31bea" />
