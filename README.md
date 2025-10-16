@@ -8,6 +8,10 @@
 
 Vikunja adalah aplikasi to-do open-source yang bisa di-self-host, yang dirancang untuk membantu individu maupun tim dalam mengelola tugas dan proyek secara fleksibel juga kolaboratif. Aplikasi ini menawarkan berbagai tampilan yang memudahkan pengaturan pekerjaan, sekaligus menjaga privasi dan kendali penuh atas data pengguna.
 
+Vikunja memiliki dua komponen utama:
+- **Frontend (Web UI)** — antarmuka berbasis browser untuk mengelola tugas.
+- **Backend (API Server)** — menyimpan data dan menangani proses aplikasi.
+
 
 ## Instalasi
 [`^ kembali ke atas ^`](#)
@@ -16,22 +20,22 @@ Sebelum instalasi, pastikan sudah menginstal:
 - **Linux server** (misalnya Ubuntu 22.04 LTS)
 - **Docker** & **Docker Compose**
 - **Git**
-- **Nginx / Apache** (opsional untuk reverse proxy)
 - **Domain / localhost** untuk akses aplikasi
+- **AWS EC2 Instance untuk hosting online**
 
-## Konfigurasi (opsional)
+#### Spesifikasi Minimum
+- RAM: 1 GB
+- Storage: 10 GB
+- Internet: Koneksi stabil untuk update & akses web
+- Port: 3456 (default Vikunja)
+
+## Instalasi di Server
 [`^ kembali ke atas ^`](#)
-
-Setting server tambahan yang diperlukan untuk meningkatkan fungsi dan kinerja aplikasi, misalnya:
-- batas upload file
-- batas memori
-- dll
-
-Plugin untuk fungsi tambahan
-- login dengan Google/Facebook
-- editor Markdown
-- dll
-
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install docker.io docker-compose git -y
+sudo systemctl enable --now docker
+```
 
 ##  Maintenance (opsional)
 [`^ kembali ke atas ^`](#)
