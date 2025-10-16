@@ -138,3 +138,4 @@ b. **Import form other devices**, merupakan fitur untuk mengimpor data dari sebu
 [`^ kembali ke atas ^`](#)
 
 - https://vikunja.io/
+- https://www.youtube.com/watch?v=4ZDYJeeG_mg (Instalasi dan Overview mengenai Vikunja)
