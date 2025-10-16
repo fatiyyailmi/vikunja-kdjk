@@ -77,7 +77,7 @@ Task yang telah dibuat juga dapat ditampilkan berdasarkan rentang waktu tertentu
 <img width="1951" height="863" alt="image" src="https://github.com/user-attachments/assets/e95e6235-b8ae-4fb9-a5ca-8481edd8a84d" />
 
 
-8. Menu **Projects** akan menampilkan projek-projek yang telat dibuat. Satu projek bisa berisi banyak task di dalamnya. Untuk membuat projek baru, user bisa tinggal mengetikkan judul projeknya dan klik tombol **Add** .
+7. Menu **Projects** akan menampilkan projek-projek yang telat dibuat. Satu projek bisa berisi banyak task di dalamnya. Untuk membuat projek baru, user bisa tinggal mengetikkan judul projeknya dan klik tombol **Add** .
 <img width="2845" height="1526" alt="image" src="https://github.com/user-attachments/assets/0846942b-40e2-4acd-987a-89d7b3b43ae2" />
 Ketika suatu projek di klik, user bisa melihat task-task dalam projek tersebut dalam 4 jenis tampilan, yaitu List, Gantt, Table, dan juga Kanban. Masing-masing jenis akan menampilkan 
 
@@ -90,22 +90,22 @@ Ketika suatu projek di klik, user bisa melihat task-task dalam projek tersebut d
 **Kanban**
 <img width="2333" height="991" alt="image" src="https://github.com/user-attachments/assets/fb9b027a-6d1d-4a47-9267-b15ed1cc91be" />
 
-7. Menu **Labels** akan menampilkan label-label yang telah dibuat oleh user. Label digunakan untuk mengelompokkan task-task sesuai kategori tertentu.
+8. Menu **Labels** akan menampilkan label-label yang telah dibuat oleh user. Label digunakan untuk mengelompokkan task-task sesuai kategori tertentu.
 <img width="2879" height="1346" alt="image" src="https://github.com/user-attachments/assets/7a4c501f-4421-44c1-ac1b-4b663a5b6ab8" />
 <img width="1504" height="788" alt="image" src="https://github.com/user-attachments/assets/eab68801-4065-428b-841c-f9f1f749bfd7" />
 
-8. Menu **Teams** digunakan ketika user ingin berkolaborasi dengan user lainnya dalam sebuah tim. User bisa langsung menembahkan anggota tim dengan mengetikkan username user lain.
+9. Menu **Teams** digunakan ketika user ingin berkolaborasi dengan user lainnya dalam sebuah tim. User bisa langsung menembahkan anggota tim dengan mengetikkan username user lain.
 <img width="2853" height="871" alt="image" src="https://github.com/user-attachments/assets/93d1ee8b-b5d1-40d5-ad25-fb20d7f00bc1" />
 <img width="2879" height="1502" alt="image" src="https://github.com/user-attachments/assets/5a7a5fb9-bbb3-4dd4-8a2a-e989d85dbd1b" />
 
-9. Jika mengklik bagian **Profile**, terdapat bagian **Settings** dengan beberapa menu lain didalamnya.
+10. Jika mengklik bagian **Profile**, terdapat bagian **Settings** dengan beberapa menu lain didalamnya.
 <img width="2849" height="1526" alt="image" src="https://github.com/user-attachments/assets/70d7a5cd-4157-4d6c-9f8f-508c1db31bea" />
 Di sini terdapat fitur penting, yaitu:
 
-**Export your Vikunja Data**, merupakan fitur untuk mengunduh salinan semua data Vikunja, termasuk projek, task, dan semua yang terkait dengannya.
+a. **Export your Vikunja Data**, merupakan fitur untuk mengunduh salinan semua data Vikunja, termasuk projek, task, dan semua yang terkait dengannya.
 <img width="2857" height="1031" alt="Screenshot 2025-10-17 012456" src="https://github.com/user-attachments/assets/afc8acda-3c85-457c-841f-3e1ca8bae394" />
 
-**Import form other devices**, merupakan fitur untuk mengimpor data dari sebuah file dari 
+b. **Import form other devices**, merupakan fitur untuk mengimpor data dari sebuah file dari 
 <img width="2879" height="1031" alt="image" src="https://github.com/user-attachments/assets/ccbc4ae1-e852-49df-8c11-d6cc65e3b074" />
 
 
