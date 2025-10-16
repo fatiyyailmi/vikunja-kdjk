@@ -23,8 +23,6 @@ Panduan instalasi Vikunja di VM AWS menggunakan Docker Compose.
 
 ### Hardware & VM
 - VM AWS EC2 (minimal t2.small)
-- RAM: Minimal 2GB
-- Storage: Minimal 20GB
 - OS: Ubuntu 20.04/22.04 LTS
 - IP Publik yang sudah di-assign
 - Security Group dengan port terbuka:
@@ -64,11 +62,6 @@ chmod 400 your-key.pem
 ssh -i "your-key.pem" ubuntu@your-ec2-public-ip
 ```
 
-**Untuk Amazon Linux:**
-```bash
-ssh -i "your-key.pem" ec2-user@your-ec2-public-ip
-```
-
 Contoh:
 ```bash
 ssh -i "vikunja-key.pem" ubuntu@54.123.45.67
@@ -83,40 +76,25 @@ sudo apt update && sudo apt upgrade -y
 ### 3. Install Docker Engine
 
 ```bash
-# Hapus instalasi Docker lama
-sudo apt remove docker docker-engine docker.io containerd runc
-
-# Install dependencies
-sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
-
-# Tambahkan Docker GPG key
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+# Tambahkan Docker GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
 
 # Tambahkan Docker repository
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+#Install Docker
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-# Install Docker
-sudo apt update
-sudo apt install -y docker-ce docker-ce-cli containerd.io
-
-# Verifikasi instalasi
-docker --version
 ```
 
-### 4. Install Docker Compose
-
-```bash
-# Download Docker Compose
-sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-# Beri permission execute
-sudo chmod +x /usr/local/bin/docker-compose
-
-# Verifikasi instalasi
-docker-compose --version
-```
-
-### 5. Setup Docker Permission
+### 4. Setup Docker Permission
 
 ```bash
 # Tambahkan user ke grup docker
@@ -129,15 +107,7 @@ newgrp docker
 docker ps
 ```
 
-### 6. Enable Docker Service
-
-```bash
-sudo systemctl enable docker
-sudo systemctl start docker
-sudo systemctl status docker
-```
-
-### 7. Buat Direktori Project
+### 5. Buat Direktori Project
 
 ```bash
 # Buat direktori project
@@ -148,7 +118,7 @@ cd ~/vikunja
 mkdir -p files duckdns
 ```
 
-### 8. Buat File docker-compose.yml
+### 6. Buat File docker-compose.yml
 
 ```bash
 nano docker-compose.yml
@@ -267,15 +237,7 @@ networks:
 
 Simpan file: `Ctrl + X`, lalu `Y`, lalu `Enter`
 
-### 9. Generate JWT Secret
-
-```bash
-openssl rand -base64 64
-```
-
-Copy hasilnya dan ganti di `VIKUNJA_SERVICE_JWTSECRET`
-
-### 10. Konfigurasi Yang Harus Diganti
+### 7. Konfigurasi Yang Harus Diganti
 
 - `VIKUNJA_DATABASE_PASSWORD`
 - `MYSQL_ROOT_PASSWORD`
@@ -290,43 +252,20 @@ Copy hasilnya dan ganti di `VIKUNJA_SERVICE_JWTSECRET`
 - `SUBDOMAINS` di DuckDNS
 - `TOKEN` DuckDNS
 
-### 11. Validasi Konfigurasi
+
+### 8. Pull Docker Images
 
 ```bash
-docker-compose config
+docker compose pull
 ```
 
-### 12. Pull Docker Images
+### 9. Start Services
 
 ```bash
-docker-compose pull
+docker compose up -d
 ```
 
-### 13. Start Services
-
-```bash
-docker-compose up -d
-```
-
-### 14. Cek Status Container
-
-```bash
-docker-compose ps
-```
-
-### 15. Monitor Logs (Opsional)
-
-```bash
-# Lihat semua logs
-docker-compose logs -f
-
-# Lihat logs spesifik
-docker-compose logs -f vikunja
-```
-
-Tekan `Ctrl + C` untuk keluar.
-
-### 16. Akses Vikunja
+### 10. Akses Vikunja
 
 Buka browser dan akses: `https://vikunjakdjk.duckdns.org`
 
