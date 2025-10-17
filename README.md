@@ -1,4 +1,4 @@
-<h1 align="center"><img src="https://vikunja.cloud/images/vikunja-logo.svg"></h1>
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c6b3a36d-b9a3-4339-bdee-459ecc369122" /><h1 align="center"><img src="https://vikunja.cloud/images/vikunja-logo.svg"></h1>
 
 [Sekilas Tentang](#sekilas-tentang) | [Instalasi](#instalasi) | [Konfigurasi](#konfigurasi) | [Otomatisasi](#otomatisasi) | [Cara Pemakaian](#cara-pemakaian) | [Pembahasan](#pembahasan) | [Referensi](#referensi)
 :---:|:---:|:---:|:---:|:---:|:---:|:---:
@@ -334,7 +334,13 @@ b. **Import form other devices**, merupakan fitur untuk mengimpor data dari sebu
 [`^ kembali ke atas ^`](#)
 
 - Pendapat anda tentang aplikasi web ini
-    - kelebihan
+- Kelebihan
+  1. Pengguna dapat melakukan export data dimana mereka dapat mengunduh arsip ZIP yang mencakup seluruh entitas data dan memungkinkan pengguna untuk melakukan backup data secara offline.
+  2. Fleksibilitas migrasi data dimana memungkinkan pengguna untuk dapat memindahkan data mereka dari satu instance server ke instance server lainnya.
+  3. Dapat melakukan Kolaborasi Tim sehingga pengguna dapat dengan mudah berbagi proyek dan menetapkan task assignment dengan pengguna lain dalam suatu grup.
+  4. Visualisasi multiple view yang menyesuaikan preferensi pengguna dimana mereka dapat memilih jenis tampilan mereka apakah ingin berbentuk List Item, Kanban Board, Gantt Chart, atau tampilan dalam bentuk tabel.
+  5. Memberikan integrasi lintas platform yang dilengkapi dengan protol calDAV dimana pengguna dapat melakukan sinkronisasi data task mereka dengan kalener handphone, khususnya bagi pengguna Apple yang memungkinkan terkoneksi langsung dengan iCalendar.
+
 - kekurangan
   - Kekurangan Dari Segi Fitur
     1. Belum ada fitur real-time update, seperti dua orang edit list/ tugas secara bersamaan
