@@ -1,4 +1,4 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c6b3a36d-b9a3-4339-bdee-459ecc369122" /><h1 align="center"><img src="https://vikunja.cloud/images/vikunja-logo.svg"></h1>
+<h1 align="center"><img src="https://vikunja.cloud/images/vikunja-logo.svg"></h1>
 
 [Sekilas Tentang](#sekilas-tentang) | [Instalasi](#instalasi) | [Konfigurasi](#konfigurasi) | [Otomatisasi](#otomatisasi) | [Cara Pemakaian](#cara-pemakaian) | [Pembahasan](#pembahasan) | [Referensi](#referensi)
 :---:|:---:|:---:|:---:|:---:|:---:|:---:
