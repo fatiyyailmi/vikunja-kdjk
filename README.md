@@ -332,22 +332,18 @@ b. **Import form other devices**, merupakan fitur untuk mengimpor data dari sebu
 
 ## Pembahasan
 [`^ kembali ke atas ^`](#)
-
-- Pendapat anda tentang aplikasi web ini
 - Kelebihan
   1. Pengguna dapat melakukan export data dimana mereka dapat mengunduh arsip ZIP yang mencakup seluruh entitas data dan memungkinkan pengguna untuk melakukan backup data secara offline.
   2. Fleksibilitas migrasi data dimana memungkinkan pengguna untuk dapat memindahkan data mereka dari satu instance server ke instance server lainnya.
   3. Dapat melakukan Kolaborasi Tim sehingga pengguna dapat dengan mudah berbagi proyek dan menetapkan task assignment dengan pengguna lain dalam suatu grup.
   4. Visualisasi multiple view yang menyesuaikan preferensi pengguna dimana mereka dapat memilih jenis tampilan mereka apakah ingin berbentuk List Item, Kanban Board, Gantt Chart, atau tampilan dalam bentuk tabel.
   5. Memberikan integrasi lintas platform yang dilengkapi dengan protol calDAV dimana pengguna dapat melakukan sinkronisasi data task mereka dengan kalener handphone, khususnya bagi pengguna Apple yang memungkinkan terkoneksi langsung dengan iCalendar.
-     <img width="1414" height="733" alt="Screenshot 2025-10-17 190546" src="https://github.com/user-attachments/assets/3736f309-6a17-43a9-a059-f3b2d038a915" /> ![WhatsApp Image 2025-10-17 at 19 49 20_bf1037d2](https://github.com/user-attachments/assets/4bbe5575-5ad1-4be4-93f6-78dd31a5a836) ![WhatsApp Image 2025-10-17 at 19 23 44_e44b6c80](https://github.com/user-attachments/assets/14aa949b-5f6d-4278-abf4-0ab70b9eb3b1) ![WhatsApp Image 2025-10-17 at 19 23 44_2efdffec](https://github.com/user-attachments/assets/fb517495-1d0a-459c-8433-574bd6cc46ea)
+     <img width="1414" height="733" alt="Screenshot 2025-10-17 190546" src="https://github.com/user-attachments/assets/3736f309-6a17-43a9-a059-f3b2d038a915" />
+     <img width="875" height="431" alt="image" src="https://github.com/user-attachments/assets/ec8d3c32-aae5-417f-930f-bbd1e13a266e" />
+     <img width="1085" height="697" alt="image" src="https://github.com/user-attachments/assets/5bb9bc12-46a8-4ff6-a1f5-451d88d58c5b" />
+     <img width="1093" height="678" alt="image" src="https://github.com/user-attachments/assets/66a1024f-5a35-4bbc-9086-d9332570093e" />
 
-
-
-
-
-
-- kekurangan
+- Kekurangan
   1. Belum ada fitur real-time update, seperti dua orang edit list/ tugas secara bersamaan.
      <img width="648" height="197" alt="image" src="https://github.com/user-attachments/assets/3c3fc14f-581c-48c4-b81e-3cbd4940fe7e" />
       - Solusi: refresh project team secara berkala agar ter-update dengan baik.
