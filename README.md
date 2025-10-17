@@ -350,7 +350,22 @@ b. **Import form other devices**, merupakan fitur untuk mengimpor data dari sebu
     5. Belum adanya fitur persentase progress untuk tiap task
        - Solusi: melihat/ menganalisis persentase progress secara manual
 - Bandingkan dengan aplikasi web lain yang sejenis
+| **Aspek / Fitur** | **Vikunja** | **Trello** |
+|--------------------|-------------|-------------|
+| **Jenis Aplikasi** | Open-source, dapat di-*self-host* (gratis & fleksibel). | Layanan SaaS (berbasis cloud, tidak bisa self-host). |
+| **Lisensi** | Gratis (self-host), open source di bawah lisensi AGPLv3. | Fitur dasar gratis, tetapi berbayar untuk fitur premium (Trello Premium/Enterprise). |
+| **Hosting & Kontrol Data** | Dapat di-host di server sendiri (Linux, Docker, AWS, dsb), kontrol penuh atas data user. | Data tersimpan di server milik Atlassian (cloud Trello), tidak dapat kontrol langsung terhadap data user. |
+| **Fitur Tampilan / UI** | Menampilkan tampilan dalam *List View*, *Kanban Board*, *Table View*, *Gantt Chart*, dan *Filter*. |  Lebih menampilkan dalam *Kanban Board*, *View* lainnya seperti board, table, dashbboard, timeline, dan map tersedia di versi premium. |
+| **Struktur Proyek & Tugas** | Mendukung alur *Projects → List Projects → Task → Description*. | Tidak ada struktur bawaan, hanya *Board → List → Card*. |
+| **Colaboration** | Mendukung kolaborasi dengan banyak user | Mendukung kolaborasi dengan user dalam organisasi, public, ataupun private |
+| **Integrasi & Ekosistem** | Dapat import data dari external dengan integrasi melalui API| Tidak dapat import data dari eksternal, dapat integrasi dengan aplikasi lain seperti Slack dan Google Drive. |
+| **Kemudahan Instalasi & Penggunaan** | Perlu instalasi manual (Docker, Docker Compose), lebih teknis tapi fleksibel. | Tinggal daftar akun, dapat dipakai tanpa setup server. |
+| **Keamanan & Privasi** | Data pribadi disimpan di server sendiri sehingga privasi tinggi. | Bergantung pada keamanan dan kebijakan Atlassian Cloud. |
+| **Backup & Pemeliharaan** | Dikelola user sendiri (manual atau otomatis via Docker volume). | Dikelola penuh oleh Trello (tidak bisa akses langsung data mentah). |
+| **Kinerja & Skalabilitas** | Ringan, bisa diatur sesuai kebutuhan server. Cocok untuk proyek pribadi atau mini project. | Stabil untuk proyek kecil-menengah fitur kompleks perlu *Power-Ups* tambahan. |
+| **Cocok Untuk** | Pengguna yang ingin privasi, kontrol penuh, dan bisa self-host di server pribadi / AWS. | Pengguna yang ingin kemudahan, visual yang menarik, dan tanpa perlu setup teknis. |
 
+---
 
 ## Referensi
 [`^ kembali ke atas ^`](#)
