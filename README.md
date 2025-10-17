@@ -342,19 +342,25 @@ b. **Import form other devices**, merupakan fitur untuk mengimpor data dari sebu
   5. Memberikan integrasi lintas platform yang dilengkapi dengan protol calDAV dimana pengguna dapat melakukan sinkronisasi data task mereka dengan kalener handphone, khususnya bagi pengguna Apple yang memungkinkan terkoneksi langsung dengan iCalendar.
 
 - kekurangan
-  - Kekurangan Dari Segi Fitur
-    1. Belum ada fitur real-time update, seperti dua orang edit list/ tugas secara bersamaan
-       - Solusi: refresh project team secara berkala agar ter-update dengan baik
-    2. Tampilan tanggal di bagian Gantt horizontal (kurang enak dipandang)
-       <img width="921" height="327" alt="image" src="https://github.com/user-attachments/assets/ba330f9e-de63-43cf-aca9-4fe2dda76afd" />
-       - Solusi: buat seperti bentuk kalender biasa (ada row dan column) 
-    3. Belum adanya sinkronisasi langsung dengan Google Calendar
-       - Solusi: Cek berkala task melalui aplikasi
-    4. Belum dapat invite teman otomatis melalui Email
-       <img width="995" height="321" alt="image" src="https://github.com/user-attachments/assets/91fb13ee-d40f-4e2e-8606-5c9b93a5a1ed" />
-       - Solusi: invite team members langsung melalui aplikasinya
-    5. Belum adanya fitur persentase progress untuk tiap task
-       - Solusi: melihat/ menganalisis persentase progress secara manual
+  1. Belum ada fitur real-time update, seperti dua orang edit list/ tugas secara bersamaan.
+     <img width="648" height="197" alt="image" src="https://github.com/user-attachments/assets/3c3fc14f-581c-48c4-b81e-3cbd4940fe7e" />
+      - Solusi: refresh project team secara berkala agar ter-update dengan baik.
+  2. Tampilan tanggal di bagian Gantt horizontal sehingga kurang enak dipandang.
+     <img width="921" height="327" alt="image" src="https://github.com/user-attachments/assets/ba330f9e-de63-43cf-aca9-4fe2dda76afd" />
+      - Solusi: buat seperti bentuk kalender biasa yang ada row dan column-nya.
+  3. Belum adanya sinkronisasi langsung dengan Google Calendar.
+     <img width="498" height="361" alt="image" src="https://github.com/user-attachments/assets/89a0958b-b96d-4d5b-9a74-e44928fb43da" />
+      - Solusi: cek berkala task melalui aplikasi.
+  4. Belum dapat invite teman otomatis melalui Email.
+     <img width="995" height="321" alt="image" src="https://github.com/user-attachments/assets/91fb13ee-d40f-4e2e-8606-5c9b93a5a1ed" />
+      - Solusi: invite team members langsung melalui aplikasinya.
+  5. Belum adanya fitur persentase progress untuk keseluruhan projek, hanya ada untuk tiap task.
+     <img width="520" height="85" alt="image" src="https://github.com/user-attachments/assets/cab40451-7dc0-4e1b-866b-108100e168be" />
+      - Solusi: melihat/ menganalisis persentase progress secara manual.
+  6. Nilai progress tidak berubah otomatis walau task atau checklist di dalam task sudah dikerjakan.
+     <img width="459" height="86" alt="image" src="https://github.com/user-attachments/assets/3c3b68f6-2a63-44a7-9832-8efffd3bc547" />
+       - Solusi: pengguna harus mengubah progress tiap task secara manual
+   
 - Bandingkan dengan aplikasi web lain yang sejenis
   
 | **Aspek / Fitur** | **Vikunja** | **Trello** |
